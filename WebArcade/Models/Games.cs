@@ -16,9 +16,11 @@ namespace WebArcade.Models
         public string Desenvolvedora { get; set; }
 
         [Required(ErrorMessage = "Obrigatorio informar o ano do lançamento")]
+        [Display(Name = "Ano do lançamento ")]
         public int Anolancamento { get; set; }
 
         [Required(ErrorMessage = "Obrigatorio informar o genero")]
+        [Display(Name = "gênero ")]
         public string Genero { get; set; }
     }
 }

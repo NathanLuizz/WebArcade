@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebArcade.Models.Games>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Games</h1>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">adicionar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desenvolvedora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anolancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desenvolvedora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anolancamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero)
+            </td>
+            <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

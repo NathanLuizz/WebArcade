@@ -1,0 +1,46 @@
+﻿@model WebArcade.Models.Games
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Remover um jogo</h1>
+
+<h3>tem certeza que deseja remover esse registro?</h3>
+<div>
+    <h4>Games</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desenvolvedora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desenvolvedora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Anolancamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Anolancamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-primary">voltar</a> |
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        
+    </form>
+</div>
